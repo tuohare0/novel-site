@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>连载 / 菟</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: #e00000;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            min-height: 100vh;
+            padding: 7vh 8vw;
+        }
+
+        /* 顶部 */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            margin-bottom: 15vh;
+        }
+
+        .section {
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .back {
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+        }
+
+        .back:hover {
+            opacity: 0.5;
+        }
+
+        /* 作品 */
+
+        .works {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .work {
+            display: grid;
+            grid-template-columns: 70px 1fr 100px;
+
+            padding: 20px 0;
+
+            border-top: 1px solid rgba(255,255,255,0.8);
+
+            color: white;
+            text-decoration: none;
+        }
+
+        .work:last-child {
+            border-bottom: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .number {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+        }
+
+        .title {
+            font-size: 17px;
+        }
+
+        .status {
+            text-align: right;
+            font-size: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .work:hover {
+            opacity: 0.5;
+        }
+
+        /* 左下 */
+
+        .meta {
+            position: fixed;
+            left: 8vw;
+            bottom: 7vh;
+
+            font-size: 10px;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 35px 30px;
+            }
+
+            header {
+                margin-bottom: 90px;
+            }
+
+            .work {
+                grid-template-columns: 45px 1fr;
+                gap: 5px;
+            }
+
+            .status {
+                display: none;
+            }
+
+            .meta {
+                left: 30px;
+                bottom: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+        <div class="section">连载</div>
+
+        <a class="back" href="index.html">
+            ← 菟
+        </a>
+    </header>
+
+
+    <main class="works">
+
+        <!-- 以后在这里添加作品 -->
+
+        <a class="work" href="#">
+            <span class="number">001</span>
+
+            <span class="title">
+                暂无作品
+            </span>
+
+            <span class="status">
+                —
+            </span>
+        </a>
+
+    </main>
+
+
+    <div class="meta">
+        FICTION / SERIAL
+    </div>
+
+</div>
+
+</body>
+</html>
