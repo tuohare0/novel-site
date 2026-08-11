@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>我的作品</title>
+    <title>磕峰牙</title>
 
     <style>
         * {
@@ -13,7 +13,6 @@
 
         html, body {
             margin: 0;
-            width: 100%;
             min-height: 100%;
         }
 
@@ -21,84 +20,136 @@
             background: #D90000;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
         }
 
         .page {
+            position: relative;
             min-height: 100vh;
-            padding: 6vw;
-            display: flex;
-            flex-direction: column;
+            overflow: hidden;
         }
 
-        header {
-            margin-bottom: 12vh;
-        }
+        .name {
+            position: absolute;
+            top: 7vh;
+            left: 8vw;
 
-        h1 {
-            margin: 0;
-            font-size: clamp(42px, 8vw, 110px);
-            line-height: 0.9;
-            font-weight: 700;
-            letter-spacing: -0.06em;
-        }
-
-        .subtitle {
-            margin-top: 25px;
-            font-size: 14px;
+            font-size: 22px;
+            font-weight: normal;
             letter-spacing: 0.08em;
         }
 
-        nav {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 1000px;
-        }
+        .note {
+            position: absolute;
+            top: 8vh;
+            right: 12vw;
 
-        nav a {
-            display: block;
-            padding: 18px 0;
-            border-top: 2px solid #ffffff;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: clamp(30px, 5vw, 72px);
-            line-height: 1;
-            letter-spacing: -0.04em;
-            transition: background 0.15s, color 0.15s, padding-left 0.15s;
-        }
-
-        nav a:last-child {
-            border-bottom: 2px solid #ffffff;
-        }
-
-        nav a:hover {
-            background: #ffffff;
-            color: #D90000;
-            padding-left: 20px;
-        }
-
-        footer {
-            margin-top: auto;
-            padding-top: 15vh;
             font-size: 11px;
             letter-spacing: 0.08em;
         }
 
+        nav {
+            position: absolute;
+            top: 30vh;
+            left: 17vw;
+
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+
+            font-size: 19px;
+            font-weight: normal;
+            letter-spacing: 0.02em;
+
+            transition: opacity 0.15s;
+        }
+
+        nav a:hover {
+            opacity: 0.45;
+        }
+
+        .serial {
+            margin-left: 0;
+        }
+
+        .short {
+            margin-left: 42px;
+        }
+
+        .other {
+            margin-left: 13px;
+        }
+
+        .images {
+            margin-left: 67px;
+        }
+
+        .small {
+            position: absolute;
+            bottom: 9vh;
+            left: 12vw;
+
+            font-size: 10px;
+            letter-spacing: 0.12em;
+        }
+
+        .year {
+            position: absolute;
+            bottom: 8vh;
+            right: 10vw;
+
+            font-size: 10px;
+        }
+
         @media (max-width: 600px) {
-            .page {
-                padding: 30px 25px;
+
+            .name {
+                top: 45px;
+                left: 30px;
+                font-size: 20px;
             }
 
-            header {
-                margin-bottom: 100px;
+            .note {
+                top: 48px;
+                right: 30px;
+                font-size: 9px;
+            }
+
+            nav {
+                top: 30vh;
+                left: 55px;
+                gap: 25px;
             }
 
             nav a {
-                padding: 22px 0;
+                font-size: 18px;
             }
 
-            footer {
-                padding-top: 120px;
+            .short {
+                margin-left: 32px;
+            }
+
+            .other {
+                margin-left: 8px;
+            }
+
+            .images {
+                margin-left: 50px;
+            }
+
+            .small {
+                left: 35px;
+                bottom: 55px;
+            }
+
+            .year {
+                right: 30px;
+                bottom: 55px;
             }
         }
     </style>
@@ -108,21 +159,20 @@
 
 <div class="page">
 
-    <header>
-        <h1>我的作品</h1>
-        <div class="subtitle">FICTION / IMAGE / TEXT</div>
-    </header>
+    <div class="name">磕峰牙</div>
+
+    <div class="note">FICTION / IMAGE</div>
 
     <nav>
-        <a href="serial.html">连载</a>
-        <a href="short.html">短篇</a>
-        <a href="other.html">其他</a>
-        <a href="images.html">图片</a>
+        <a class="serial" href="serial.html">连载</a>
+        <a class="short" href="short.html">短篇</a>
+        <a class="other" href="other.html">其他</a>
+        <a class="images" href="images.html">图片</a>
     </nav>
 
-    <footer>
-        © 2026
-    </footer>
+    <div class="small">TEXT / DRAWING / ETC.</div>
+
+    <div class="year">2026</div>
 
 </div>
 
