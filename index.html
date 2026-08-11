@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>磕峰牙</title>
+    <title>菟</title>
 
     <style>
         * {
@@ -19,140 +19,143 @@
         }
 
         body {
-            background: #D90000;
+            background: #e00000;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
         }
 
         .page {
+            width: 100vw;
+            height: 100vh;
+
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        /* 左侧 */
+
+        .left {
             position: relative;
-            width: 100%;
-            min-height: 100vh;
+            background: #e00000;
+            height: 100vh;
         }
 
-        /* 网站名称 */
-
-        .name {
-            position: absolute;
-            top: 8vh;
-            left: 8vw;
-
-            font-size: 20px;
-            font-weight: normal;
-            letter-spacing: 0.08em;
-        }
-
-        /* 四个导航 */
+        /* 导航 */
 
         nav {
             position: absolute;
 
+            left: 10%;
             top: 50%;
-            left: 50%;
 
-            transform: translate(-50%, -50%);
+            transform: translateY(-50%);
 
-            width: min(760px, 80vw);
+            display: flex;
+            flex-direction: column;
 
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-
-            border-top: 1px solid #ffffff;
-            border-bottom: 1px solid #ffffff;
+            gap: 20px;
         }
 
         nav a {
-            position: relative;
+            color: white;
+            text-decoration: none;
 
-            height: 72px;
+            font-size: 17px;
+            font-weight: normal;
+
+            line-height: 1;
+
+            transition: opacity 0.15s;
+        }
+
+        nav a:hover {
+            opacity: 0.45;
+        }
+
+        /* 左下信息 */
+
+        .meta {
+            position: absolute;
+
+            left: 10%;
+            bottom: 7%;
+
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .author {
+            font-size: 17px;
+            letter-spacing: 0.04em;
+        }
+
+        /* 右侧图片 */
+
+        .image-area {
+            width: 100%;
+            height: 100vh;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            color: #ffffff;
-            text-decoration: none;
+            overflow: hidden;
 
-            font-size: 18px;
-            font-weight: normal;
-
-            letter-spacing: 0.04em;
-
-            border-left: 1px solid #ffffff;
-
-            transition:
-                background 0.15s,
-                color 0.15s;
+            background: #e00000;
         }
 
-        nav a:first-child {
-            border-left: none;
+        .image-area img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
         }
 
-        nav a:hover {
-            background: #ffffff;
-            color: #D90000;
-        }
+        /* 手机 */
 
-        /* 小信息 */
+        @media (max-width: 700px) {
 
-        .info-left {
-            position: absolute;
+            body {
+                overflow: auto;
+            }
 
-            left: 8vw;
-            bottom: 8vh;
+            .page {
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
 
-            font-size: 10px;
-            letter-spacing: 0.12em;
-        }
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 48vh 52vh;
+            }
 
-        .info-right {
-            position: absolute;
+            .left {
+                height: 48vh;
+            }
 
-            right: 8vw;
-            bottom: 8vh;
-
-            font-size: 10px;
-            letter-spacing: 0.08em;
-        }
-
-        @media (max-width: 600px) {
-
-            .name {
-                top: 40px;
-                left: 30px;
-                font-size: 19px;
+            .image-area {
+                height: 52vh;
             }
 
             nav {
-                width: calc(100vw - 60px);
-
-                grid-template-columns: repeat(2, 1fr);
-
-                border-bottom: none;
+                left: 10%;
+                gap: 17px;
             }
 
             nav a {
-                height: 65px;
+                font-size: 16px;
             }
 
-            nav a:nth-child(1),
-            nav a:nth-child(2) {
-                border-bottom: 1px solid #ffffff;
-            }
-
-            nav a:nth-child(3) {
-                border-left: none;
-            }
-
-            .info-left {
-                left: 30px;
-                bottom: 40px;
-            }
-
-            .info-right {
-                right: 30px;
-                bottom: 40px;
+            .meta {
+                left: 10%;
+                bottom: 8%;
             }
         }
     </style>
@@ -162,22 +165,29 @@
 
 <div class="page">
 
-    <div class="name">磕峰牙</div>
+    <section class="left">
 
-    <nav>
-        <a href="serial.html">连载</a>
-        <a href="short.html">短篇</a>
-        <a href="other.html">其他</a>
-        <a href="images.html">图片</a>
-    </nav>
+        <nav>
+            <a href="serial.html">连载</a>
+            <a href="short.html">短篇</a>
+            <a href="other.html">其他</a>
+            <a href="images.html">图片</a>
+        </nav>
 
-    <div class="info-left">
-        FICTION / IMAGE
-    </div>
+        <div class="meta">
+            <span class="author">菟</span>
+            <span>FICTION / IMAGE</span>
+            <span>2026</span>
+        </div>
 
-    <div class="info-right">
-        2026
-    </div>
+    </section>
+
+
+    <section class="image-area">
+
+        <img src="thermal-glow2.png" alt="">
+
+    </section>
 
 </div>
 
