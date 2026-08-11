@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>图片 / 菟</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: #ffffff;
+            color: #111111;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            min-height: 100vh;
+            padding: 7vh 8vw;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            margin-bottom: 12vh;
+        }
+
+        .section {
+            font-size: 18px;
+        }
+
+        .back {
+            color: #111111;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+        }
+
+        .back:hover {
+            opacity: 0.5;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+
+            max-width: 1100px;
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .placeholder {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            border: 1px solid #111111;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10px;
+            letter-spacing: 0.08em;
+        }
+
+        .meta {
+            margin-top: 12vh;
+
+            font-size: 10px;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 35px 30px;
+            }
+
+            header {
+                margin-bottom: 70px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+        <div class="section">图片</div>
+
+        <a class="back" href="index.html">
+            ← 菟
+        </a>
+    </header>
+
+    <main class="gallery">
+
+        <img src="thermal-glow2.png" alt="">
+
+        <div class="placeholder">
+            IMAGE 002
+        </div>
+
+        <div class="placeholder">
+            IMAGE 003
+        </div>
+
+    </main>
+
+    <div class="meta">
+        IMAGE / 2026
+    </div>
+
+</div>
+
+</body>
+</html>
