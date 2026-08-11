@@ -11,145 +11,148 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
-            min-height: 100%;
+            width: 100%;
+            height: 100%;
         }
 
         body {
             background: #D90000;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
         }
 
         .page {
             position: relative;
+            width: 100%;
             min-height: 100vh;
-            overflow: hidden;
         }
+
+        /* 网站名称 */
 
         .name {
             position: absolute;
-            top: 7vh;
+            top: 8vh;
             left: 8vw;
 
-            font-size: 22px;
+            font-size: 20px;
             font-weight: normal;
             letter-spacing: 0.08em;
         }
 
-        .note {
-            position: absolute;
-            top: 8vh;
-            right: 12vw;
-
-            font-size: 11px;
-            letter-spacing: 0.08em;
-        }
+        /* 四个导航 */
 
         nav {
             position: absolute;
-            top: 30vh;
-            left: 17vw;
 
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: min(760px, 80vw);
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            border-top: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
         }
 
         nav a {
+            position: relative;
+
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             color: #ffffff;
             text-decoration: none;
 
-            font-size: 19px;
+            font-size: 18px;
             font-weight: normal;
-            letter-spacing: 0.02em;
 
-            transition: opacity 0.15s;
+            letter-spacing: 0.04em;
+
+            border-left: 1px solid #ffffff;
+
+            transition:
+                background 0.15s,
+                color 0.15s;
+        }
+
+        nav a:first-child {
+            border-left: none;
         }
 
         nav a:hover {
-            opacity: 0.45;
+            background: #ffffff;
+            color: #D90000;
         }
 
-        .serial {
-            margin-left: 0;
-        }
+        /* 小信息 */
 
-        .short {
-            margin-left: 42px;
-        }
-
-        .other {
-            margin-left: 13px;
-        }
-
-        .images {
-            margin-left: 67px;
-        }
-
-        .small {
+        .info-left {
             position: absolute;
-            bottom: 9vh;
-            left: 12vw;
+
+            left: 8vw;
+            bottom: 8vh;
 
             font-size: 10px;
             letter-spacing: 0.12em;
         }
 
-        .year {
+        .info-right {
             position: absolute;
+
+            right: 8vw;
             bottom: 8vh;
-            right: 10vw;
 
             font-size: 10px;
+            letter-spacing: 0.08em;
         }
 
         @media (max-width: 600px) {
 
             .name {
-                top: 45px;
+                top: 40px;
                 left: 30px;
-                font-size: 20px;
-            }
-
-            .note {
-                top: 48px;
-                right: 30px;
-                font-size: 9px;
+                font-size: 19px;
             }
 
             nav {
-                top: 30vh;
-                left: 55px;
-                gap: 25px;
+                width: calc(100vw - 60px);
+
+                grid-template-columns: repeat(2, 1fr);
+
+                border-bottom: none;
             }
 
             nav a {
-                font-size: 18px;
+                height: 65px;
             }
 
-            .short {
-                margin-left: 32px;
+            nav a:nth-child(1),
+            nav a:nth-child(2) {
+                border-bottom: 1px solid #ffffff;
             }
 
-            .other {
-                margin-left: 8px;
+            nav a:nth-child(3) {
+                border-left: none;
             }
 
-            .images {
-                margin-left: 50px;
+            .info-left {
+                left: 30px;
+                bottom: 40px;
             }
 
-            .small {
-                left: 35px;
-                bottom: 55px;
-            }
-
-            .year {
+            .info-right {
                 right: 30px;
-                bottom: 55px;
+                bottom: 40px;
             }
         }
     </style>
@@ -161,18 +164,20 @@
 
     <div class="name">磕峰牙</div>
 
-    <div class="note">FICTION / IMAGE</div>
-
     <nav>
-        <a class="serial" href="serial.html">连载</a>
-        <a class="short" href="short.html">短篇</a>
-        <a class="other" href="other.html">其他</a>
-        <a class="images" href="images.html">图片</a>
+        <a href="serial.html">连载</a>
+        <a href="short.html">短篇</a>
+        <a href="other.html">其他</a>
+        <a href="images.html">图片</a>
     </nav>
 
-    <div class="small">TEXT / DRAWING / ETC.</div>
+    <div class="info-left">
+        FICTION / IMAGE
+    </div>
 
-    <div class="year">2026</div>
+    <div class="info-right">
+        2026
+    </div>
 
 </div>
 
