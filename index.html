@@ -2,10 +2,113 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>我的小说</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>我的作品</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f7f5f2;
+            color: #252525;
+            font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        header {
+            margin-bottom: 100px;
+        }
+
+        h1 {
+            margin: 0 0 15px;
+            font-size: 42px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            color: #777;
+            font-size: 15px;
+        }
+
+        nav {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        nav a {
+            display: block;
+            padding: 35px 30px;
+            border: 1px solid #d8d4cf;
+            color: #252525;
+            text-decoration: none;
+            font-size: 21px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background: #ebe8e3;
+        }
+
+        footer {
+            margin-top: 120px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 50px 20px;
+            }
+
+            header {
+                margin-bottom: 60px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            nav {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>我的小说</h1>
-    <p>这里是我的作品。</p>
+
+<div class="container">
+
+    <header>
+        <h1>我的作品</h1>
+        <div class="description">
+            小说、文字与图像
+        </div>
+    </header>
+
+    <nav>
+        <a href="serial.html">连载</a>
+        <a href="short.html">短篇</a>
+        <a href="other.html">其他</a>
+        <a href="images.html">图片</a>
+    </nav>
+
+    <footer>
+        © 2026
+    </footer>
+
+</div>
+
 </body>
 </html>
